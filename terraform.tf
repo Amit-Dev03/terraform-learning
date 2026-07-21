@@ -7,7 +7,7 @@ terraform {
   }
 
     backend "s3" {
-    bucket         = "amit-pandey-tf-state-bucket-${terraform.workspace}" # Must match the one created above
+    bucket         = "amit-pandey-tf-state-bucket-2026" # Must match the one created above
     key            = "project-a/dev/terraform.tfstate" # Unique path for this project
     region         = "ap-south-1"
     dynamodb_table = "terraform-locks"
