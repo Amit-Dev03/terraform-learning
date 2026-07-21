@@ -10,7 +10,7 @@ terraform {
     bucket         = "amit-pandey-tf-state-bucket-2026" # Must match the one created above
     key            = "project-a/dev/terraform.tfstate" # Unique path for this project
     region         = "ap-south-1"
-    dynamodb_table = "terraform-locks"
+    use_path_style = true #dynamodb_table = "terraform-locks" old style 
     encrypt        = true
   }
 }

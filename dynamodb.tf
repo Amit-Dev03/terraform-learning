@@ -1,6 +1,6 @@
 # 5. Create the DynamoDB Table for State Locking
 resource "aws_dynamodb_table" "terraform_locks" {
-  name           = "terraform-locks" # Name for your lock table
+  name           = "terraform-locks-${terraform.workspace}" # Name for your lock table
   billing_mode   = "PAY_PER_REQUEST" # Cost-effective for intermittent usage
   hash_key       = "LockID"
 

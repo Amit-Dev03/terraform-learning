@@ -1,6 +1,6 @@
 #key-pair (login)
 resource aws_key_pair my_key{
-	key_name = "terra-key-from-ubuntu-mypc"
+	key_name = "terra-key-from-ubuntu-mypc-${terraform.workspace}"
     public_key = file("terra-key-from-ubuntu-mypc.pub")
     tags = {
         Name = "terra-key-for-${terraform.workspace}"
@@ -15,7 +15,7 @@ resource "aws_default_vpc" "default" {
 }
 
 resource aws_security_group my_sg{
-  name = "automate-tf-sg"
+  name = "automate-tf-sg-${terraform.workspace}"
   description = "This will add a tf generated sg"
 
   vpc_id = aws_default_vpc.default.id #this is known as interpolation i.e to inherit or extract the values from a tf block
@@ -49,7 +49,7 @@ resource "aws_instance" "my_ec2_instance"{
   key_name = aws_key_pair.my_key.key_name
   security_groups = [aws_security_group.my_sg.name]
 
-  instance_type = "t3.micro"
+  instance_type = "t3.small"
   ami = "ami-01a00762f46d584a1" #ubuntu ami id
 
   root_block_device{
@@ -58,6 +58,7 @@ resource "aws_instance" "my_ec2_instance"{
   }
 
   tags = {
-    Name = "first-ec2-instance-${terraform.workspace}"
+    Name = "ec2-${terraform.workspace}"
+    Environment = "${terraform.workspace}"
   }
 }
