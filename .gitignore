@@ -1,3 +1,6 @@
 .terraform/
-terra-key-from-ubuntu-mypc
 terra-key-from-ubuntu-mypc.pub
+.gitignore
+terra-key-from-ubuntu-mypc
+.terraform.lock.hcl
+terraform.tfstate.backup
