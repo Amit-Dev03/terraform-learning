@@ -1,6 +1,6 @@
 # 1. Create the S3 Bucket
 resource "aws_s3_bucket" "terraform_state_bucket" {
-  bucket = "amit-pandey-tf-state-bucket-2026" # Must be globally unique
+  bucket = "amit-pandey-tf-state-bucket-${terraform.workspace}" # Must be globally unique
   force_destroy = false # Prevents accidental bucket deletion
 }
 

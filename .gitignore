@@ -4,3 +4,5 @@ terra-key-from-ubuntu-mypc.pub
 terra-key-from-ubuntu-mypc
 .terraform.lock.hcl
 terraform.tfstate.backup
+terraform.tfstate
+terraform.tfstate.backup
