@@ -1,7 +1,7 @@
 #key-pair (login)
 resource aws_key_pair my_key{
 	key_name = "terra-key-from-ubuntu-mypc-${terraform.workspace}"
-    public_key = file("terra-key-from-ubuntu-mypc.pub")
+    public_key = file("~/keys/terra-key-from-ubuntu-mypc.pub")  #this is the public key of the key pair which is generated in my local machine
     tags = {
         Name = "terra-key-for-${terraform.workspace}"
     }
