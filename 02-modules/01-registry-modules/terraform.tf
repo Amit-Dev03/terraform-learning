@@ -8,7 +8,7 @@ terraform {
 
     backend "s3" {
     bucket         = "amit-pandey-tf-state-bucket-2026" # Must match the one created above
-    key            = "project-a/dev/terraform.tfstate" # Unique path for this project
+    key            = "02-modules/terraform.tfstate" # Unique path for this project
     region         = "ap-south-1"
     use_path_style = true #dynamodb_table = "terraform-locks" old style 
     encrypt        = true
